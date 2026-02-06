@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  data-bs-theme="dark">
+<html data-bs-theme="dark">
 
 <head>
     <title>V1t CTF 2025</title>
@@ -7,32 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/bem4bem.ico" type="image/x-icon">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/main.css">
-
-    <script src="color_mode_switcher.js"></script>
-
-
     <link rel="stylesheet" href="/custom.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const snackbar = document.getElementById('ctfdio-snackbar-email-nudge');
-            if (snackbar) {
-                snackbar.style.display = 'none';
-            }
-
-            setTimeout(function () {
-                const footer = document.querySelector('.footer');
-                if (footer) {
-                    footer.style.opacity = '0';
-                    footer.style.transition = 'opacity 0.5s ease-in-out';
-
-                    setTimeout(function () {
-                        footer.style.display = 'none';
-                    }, 500);
-                }
-            }, 2000);
-        });
-    </script>
 
 </head>
 
@@ -40,9 +19,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a href="/" class="navbar-brand">
-
                 <img class="img-responsive ctf_logo" src="/bem4bem_75.png" alt="V1t CTF 2025" height="25">
-
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#base-navbars"
@@ -52,211 +29,39 @@
 
             <div class="collapse navbar-collapse" id="base-navbars">
                 <ul class="navbar-nav me-auto">
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/rules">
-                            Rules
-                        </a>
+                        <a class="nav-link" href="/rules">Rules</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/faq">
-                            FAQ
-                        </a>
+                        <a class="nav-link" href="/faq">FAQ</a>
                     </li>
-
-
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/users">
-                            Users
-                        </a>
+                        <a class="nav-link" href="/users">Users</a>
                     </li>
-
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/teams">
-                            Teams
-                        </a>
+                        <a class="nav-link" href="/teams">Teams</a>
                     </li>
-
-
-
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/scoreboard">
-                            Scoreboard
-                        </a>
+                        <a class="nav-link" href="/scoreboard">Scoreboard</a>
                     </li>
-
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/challenges">
-                            Challenges
-                        </a>
+                        <a class="nav-link" href="/challenges">Challenges</a>
                     </li>
                 </ul>
 
                 <hr class="d-sm-flex d-md-flex d-lg-none">
 
                 <ul class="navbar-nav ms-md-auto d-block d-sm-flex d-md-flex">
-
-
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="/login">
-                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login">
-                                <i class="fas fa-sign-in-alt d-none d-md-inline d-lg-none"></i>
-                            </span>
-                            <span class="d-sm-inline d-md-none d-lg-inline">
-                                <i class="fas fa-sign-in-alt pe-1"></i>
-                                Login
-                            </span>
+                            <i class="fas fa-sign-in-alt pe-1"></i>
+                            Login
                         </a>
                     </li>
-
-
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="fas fa-language d-none d-md-inline"></i>
-                            <span class="d-sm-inline d-md-none">
-                                <i class="fas fa-language pe-1"></i>
-                                Change language
-                            </span>
-                        </button>
-                        <form x-data="LanguageForm">
-                            <ul class="dropdown-menu dropdown-menu-end">
-
-                                <li>
-                                    <span class="dropdown-item bg-primary text-white" @click="set" value="en">
-                                        English
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="de">
-                                        Deutsch
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="pl">
-                                        Polski
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="es">
-                                        Español
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ar">
-                                        اَلْعَرَبِيَّةُ
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="zh_CN">
-                                        简体中文
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="zh_TW">
-                                        繁體中文
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="fr">
-                                        Français
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ko">
-                                        한국어
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ru">
-                                        русский язык
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="pt_BR">
-                                        Português do Brasil
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="sk">
-                                        Slovenský jazyk
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ja">
-                                        日本語
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="it">
-                                        Italiano
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="vi">
-                                        tiếng Việt
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ca">
-                                        Català
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="el">
-                                        Ελληνικά
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="fi">
-                                        Suomi
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="ro">
-                                        Română
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="sl">
-                                        Slovenščina
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="sv">
-                                        Svenska
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="he">
-                                        עברית
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="dropdown-item " @click="set" value="uz">
-                                        oʻzbekcha
-                                    </span>
-                                </li>
-                            </ul>
-                        </form>
-                    </li>
-
                     <li class="nav-item">
-                        <button class="nav-link theme-switch" type="button">
-                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle theme">
-                                <i class="fas fa-sun d-none d-md-inline"></i>
-                            </span>
-                            <span class="d-sm-inline d-md-none">
-                                <i class="fas fa-sun pe-1"></i>
-                                Toggle theme
-                            </span>
+                        <button class="nav-link" onclick="toggleTheme()">
+                            <i class="fas fa-sun pe-1"></i>
+                            Toggle theme
                         </button>
                     </li>
                 </ul>
@@ -265,957 +70,637 @@
     </nav>
 
     <main role="main">
-
         <div class="jumbotron">
             <div class="container">
-                <h1>
-                    Challenges
-                </h1>
+                <h1>Challenges</h1>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div>
+                    <div class="alert alert-info alert-dismissible text-center" role="alert">
+                        <span>V1t CTF 2025 has ended</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="alert alert-info alert-dismissible text-center" role="alert">
-                            <span>V1t CTF 2025 has ended</span>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"></span>
+            <!-- Duck Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Duck</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="11">
+                                <div class="challenge-inner my-3">
+                                    <p>Rules</p>
+                                    <span>10</span>
+                                </div>
                             </button>
                         </div>
-
-
-
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="18">
+                                <div class="challenge-inner my-3">
+                                    <p>Lucky Flag</p>
+                                    <span>10</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="19">
+                                <div class="challenge-inner my-3">
+                                    <p>Duck Robots</p>
+                                    <span>10</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="20">
+                                <div class="challenge-inner my-3">
+                                    <p>Feedback</p>
+                                    <span>10</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="39">
+                                <div class="challenge-inner my-3">
+                                    <p>Discord</p>
+                                    <span>10</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button
+                                class="challenge-button btn btn-dark w-100 h-100 tag-LeeMinSang tag-DavidP tag-Shirajuki tag-emKhoi2k10 tag-Basim tag-Vizer tag-ShahJi tag-Jaze tag-Deroise2306 tag-Rawr"
+                                data-bs-toggle="modal" data-bs-target="#challengeModal" data-challenge-id="43">
+                                <div class="challenge-inner my-3">
+                                    <p>Shout Out</p>
+                                    <span>10</span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div x-data="ChallengeBoard" @load-challenges.window="loadChallenges()"
-                @load-challenge.window="loadChallenge($event.detail)">
-                <div x-ref="challengeWindow" id="challenge-window" class="modal fade" tabindex="-1" role="dialog"
-                    x-data="" x-html="$store.challenge.data.view"></div>
-
-                <div x-show="!loaded" style="display: none;">
-                    <div class="min-vh-50 d-flex align-items-center">
-                        <div class="text-center w-100">
-                            <i class="fas fa-circle-notch fa-spin fa-3x fa-fw spinner"></i>
+            <!-- Misc Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Misc</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Rawr" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="3">
+                                <div class="challenge-inner my-3">
+                                    <p>Talking Duck</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="8">
+                                <div class="challenge-inner my-3">
+                                    <p>Emoji Thief</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="13">
+                                <div class="challenge-inner my-3">
+                                    <p>RotBrain</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="14">
+                                <div class="challenge-inner my-3">
+                                    <p>Blank</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah-Ji" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="28">
+                                <div class="challenge-inner my-3">
+                                    <p>Specimen 512</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="30">
+                                <div class="challenge-inner my-3">
+                                    <p>Polyglot</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="65">
+                                <div class="challenge-inner my-3">
+                                    <p>MOOOO</p>
+                                    <span>230</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="2">
+                                <div class="challenge-inner my-3">
+                                    <p>TFT Set 15</p>
+                                    <span>305</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="52">
+                                <div class="challenge-inner my-3">
+                                    <p>Dont Bother</p>
+                                    <span>425</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="69">
+                                <div class="challenge-inner my-3">
+                                    <p>67</p>
+                                    <span>460</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="49">
+                                <div class="challenge-inner my-3">
+                                    <p>INSANITY</p>
+                                    <span>485</span>
+                                    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="76">
+                                <div class="challenge-inner my-3">
+                                    <p>INSANITY 2</p>
+                                    <span>564</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Shirajuki tag-web tag-rev"
+                                data-bs-toggle="modal" data-bs-target="#challengeModal" data-challenge-id="70">
+                                <div class="challenge-inner my-3">
+                                    <p>Cow clicker</p>
+                                    <span>618</span>
+                                    
+                                </div>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div x-show="loaded">
-                    <template x-for="(category, idx) in getCategories()" :key="idx">
-                        <div class="pt-5">
-                            <div class="category-header mb-3">
-                                <h3 x-text="category"></h3>
-                            </div>
-
-                            <div class="category-challenges d-flex flex-column">
-                                <div class="challenges-row row">
-                                    <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                            <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                                <div class="challenge-inner my-3">
-                                                    <p x-text="c.name"></p>
-                                                    <span x-text="c.value"></span>
-                                                </div>
-                                            </button>
-                                        </div>
-                                    </template>
+            <!-- Crypto Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Crypto</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="7">
+                                <div class="challenge-inner my-3">
+                                    <p>Lost Some Binary</p>
+                                    <span>100</span>
                                 </div>
-                            </div>
+                            </button>
                         </div>
-                    </template>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Duck</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="23">
+                                <div class="challenge-inner my-3">
+                                    <p>RSA 101</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="11">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Rules</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="32">
+                                <div class="challenge-inner my-3">
+                                    <p>Modulo Mystery</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="18">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Lucky Flag</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="38">
+                                <div class="challenge-inner my-3">
+                                    <p>Misconfigured RSA</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="19">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Duck Robots</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="58">
+                                <div class="challenge-inner my-3">
+                                    <p>&lrm; </p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="20">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Feedback</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="60">
+                                <div class="challenge-inner my-3">
+                                    <p>Shamir's Duck</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="39">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Discord</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-PRNG" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="66">
+                                <div class="challenge-inner my-3">
+                                    <p>RandomStuff</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button
-                                        class="challenge-button btn btn-dark w-100 h-100 tag-LeeMinSang tag-DavidP tag-Shirajuki tag-emKhoi2k10 tag-Basim tag-Vizer tag-ShahJi tag-Jaze tag-Deroise2306 tag-Rawr"
-                                        :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="43">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Shout Out</p>
-                                            <span x-text="c.value">10</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="59">
+                                <div class="challenge-inner my-3">
+                                    <p>Color</p>
+                                    <span>185</span>
                                 </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Misc</h3>
+                </div>
+            </div>
+
+            <!-- Rev Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Rev</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-N" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="9">
+                                <div class="challenge-inner my-3">
+                                    <p>Python 0bf</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Rawr" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="3">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Talking Duck</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="25">
+                                <div class="challenge-inner my-3">
+                                    <p>Snail Delivery</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="8">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Emoji Thief</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="33">
+                                <div class="challenge-inner my-3">
+                                    <p>Duck RPG</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="13">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">RotBrain</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="55">
+                                <div class="challenge-inner my-3">
+                                    <p>Optimus</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="14">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Blank</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-N" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="64">
+                                <div class="challenge-inner my-3">
+                                    <p>Bad Reverser</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah-Ji" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="28">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Specimen 512</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-DavidP tag-N"
+                                data-bs-toggle="modal" data-bs-target="#challengeModal" data-challenge-id="12">
+                                <div class="challenge-inner my-3">
+                                    <p>Duck Product Key</p>
+                                    <span>453</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="30">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Polyglot</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Safear" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="24">
+                                <div class="challenge-inner my-3">
+                                    <p>Nihilist</p>
+                                    <span>474</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="65">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">MOOOO</p>
-                                            <span x-text="c.value">230</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="2">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">TFT Set 15</p>
-                                            <span x-text="c.value">305</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="52">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Dont Bother</p>
-                                            <span x-text="c.value">425</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="69">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">67</p>
-                                            <span x-text="c.value">460</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="49">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">INSANITY</p>
-                                            <span x-text="c.value">485</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="76">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">INSANITY 2</p>
-                                            <span x-text="c.value">564</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button
-                                        class="challenge-button btn btn-dark w-100 h-100 tag-Shirajuki tag-web tag-rev"
-                                        :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="70">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Cow clicker</p>
-                                            <span x-text="c.value">618</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Crypto</h3>
+                </div>
+            </div>
+
+            <!-- Osint Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Osint</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="10">
+                                <div class="challenge-inner my-3">
+                                    <p>Among USniversity</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="7">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Lost Some Binary</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="29">
+                                <div class="challenge-inner my-3">
+                                    <p>Dusk Till Duck</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="23">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">RSA 101</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="48">
+                                <div class="challenge-inner my-3">
+                                    <p>The Forgotten Inventory</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="32">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Modulo Mystery</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="54">
+                                <div class="challenge-inner my-3">
+                                    <p>Duck Company</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="38">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Misconfigured RSA</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="61">
+                                <div class="challenge-inner my-3">
+                                    <p>16th Duck</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="58">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">&lrm; </p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Vizer" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="31">
+                                <div class="challenge-inner my-3">
+                                    <p>Snowflake</p>
+                                    <span>270</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="60">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Shamir's Duck</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-PRNG" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="66">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">RandomStuff</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="59">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Color</p>
-                                            <span x-text="c.value">185</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Rev</h3>
+                </div>
+            </div>
+
+            <!-- Web Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Web</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="15">
+                                <div class="challenge-inner my-3">
+                                    <p>Login Panel</p>
+                                    <span>100</span>
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-N" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="9">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Python 0bf</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="16">
+                                <div class="challenge-inner my-3">
+                                    <p>Stylish Flag</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="25">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Snail Delivery</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="17">
+                                <div class="challenge-inner my-3">
+                                    <p>Tiny Flag</p>
+                                    <span>100</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="33">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Duck RPG</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-MCK" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="21">
+                                <div class="challenge-inner my-3">
+                                    <p>Mark The Lyrics</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="55">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Optimus</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah-Ji" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="53">
+                                <div class="challenge-inner my-3">
+                                    <p>5571</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-N" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="64">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Bad Reverser</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-DavidP tag-N" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="12">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Duck Product Key</p>
-                                            <span x-text="c.value">453</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Safear" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="24">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Nihilist</p>
-                                            <span x-text="c.value">474</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Osint</h3>
+                </div>
+            </div>
+
+            <!-- Forensics Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>Forensics</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="34">
+                                <div class="challenge-inner my-3">
+                                    <p>Tryna crack?</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="10">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Among USniversity</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="35">
+                                <div class="challenge-inner my-3">
+                                    <p>Fuck Da Binary</p>
+                                    <span>380</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="29">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Dusk Till Duck</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="50">
+                                <div class="challenge-inner my-3">
+                                    <p>Malware Sucks</p>
+                                    <span>520</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="48">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">The Forgotten Inventory</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="36">
+                                <div class="challenge-inner my-3">
+                                    <p>Thirsty Sick 🥵💦</p>
+                                    <span>615</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="54">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Duck Company</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                            </button>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="68">
+                                <div class="challenge-inner my-3">
+                                    <p>8③8⑥</p>
+                                    <span>800</span>
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="61">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">16th Duck</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Vizer" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="31">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Snowflake</p>
-                                            <span x-text="c.value">270</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Web</h3>
+                </div>
+            </div>
+
+            <!-- PWN Category -->
+            <div class="pt-5">
+                <div class="category-header mb-3">
+                    <h3>PWN</h3>
+                </div>
+                <div class="category-challenges d-flex flex-column">
+                    <div class="challenges-row row">
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="41">
+                                <div class="challenge-inner my-3">
+                                    <p>Waddler</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="15">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Login Panel</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="42">
+                                <div class="challenge-inner my-3">
+                                    <p>WakeCall</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="16">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Stylish Flag</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="17">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Tiny Flag</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-MCK" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="21">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Mark The Lyrics</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Shah-Ji" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="53">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">5571</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
-                    </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">Forensics</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="45">
+                                <div class="challenge-inner my-3">
+                                    <p>Feather Father</p>
+                                    <span>100</span>
+                                    
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="34">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Tryna crack?</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="46">
+                                <div class="challenge-inner my-3">
+                                    <p>Faulty Announcer</p>
+                                    <span>100</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="35">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Fuck Da Binary</p>
-                                            <span x-text="c.value">380</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="50">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Malware Sucks</p>
-                                            <span x-text="c.value">520</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Jaze" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="36">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Thirsty Sick 🥵💦</p>
-                                            <span x-text="c.value">615</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="68">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">8③8⑥</p>
-                                            <span x-text="c.value">800</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
-                    </div>
-                    <div class="pt-5">
-                        <div class="category-header mb-3">
-                            <h3 x-text="category">PWN</h3>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="73">
+                                <div class="challenge-inner my-3">
+                                    <p>EchoNet</p>
+                                    <span>235</span>
+                                    
+                                </div>
+                            </button>
                         </div>
-
-                        <div class="category-challenges d-flex flex-column">
-                            <div class="challenges-row row">
-                                <template x-for="(c, idx) in getChallenges(category)" :key="c.id">
-                                    <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                        <button class="challenge-button btn btn-dark w-100 h-100" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)">
-
-                                            <div class="challenge-inner my-3">
-                                                <p x-text="c.name"></p>
-                                                <span x-text="c.value"></span>
-                                            </div>
-                                        </button>
-                                    </div>
-                                </template>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="41">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Waddler</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
+                        <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+                            <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" data-bs-toggle="modal"
+                                data-bs-target="#challengeModal" data-challenge-id="75">
+                                <div class="challenge-inner my-3">
+                                    <p>Leave It</p>
+                                    <span>305</span>
+                                    
                                 </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="42">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">WakeCall</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="45">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Feather Father</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="46">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Faulty Announcer</p>
-                                            <span x-text="c.value">100</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="73">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">EchoNet</p>
-                                            <span x-text="c.value">235</span>
-                                        </div>
-                                    </button>
-                                </div>
-                                <div class="col-sm-6 col-md-4 col-lg-3 my-3">
-                                    <button class="challenge-button btn btn-dark w-100 h-100 tag-Basim" :class="[
-                          c.solved_by_me ? 'challenge-solved' : '',
-                          ...c.tags.map((tag) =&gt; `tag-${tag.value.replace(/ /g, '-')}`),
-                        ];" :value="c.id" @click="loadChallenge(c.id)" value="75">
-
-                                        <div class="challenge-inner my-3">
-                                            <p x-text="c.name">Leave It</p>
-                                            <span x-text="c.value">305</span>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
-
-
-    <footer class="footer">
-        <div class="container text-center">
-            <a href="https://ctfd.io" class="text-secondary">
-                <small class="text-muted">
-                    Powered by CTFd
-                </small>
-            </a>
-        </div>
-    </footer>
 
     <script type="module" src="/index.js"></script>
     <script type="module" src="/page.js"></script>
@@ -1228,6 +713,65 @@
             alert(atob("djF0e2x1Y2t5X2R1Y2t5fQ=="));
         }
     </script>
+    <!-- Challenge Modal -->
+    <div class="modal fade" id="challengeModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body py-4 px-4 px-sm-5"> 
+
+                    <div id="rawr"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5 py-3">
+        <div class="container text-center">
+            <a href="https://ctfd.io" class="text-secondary text-decoration-none">
+                <small class="text-muted">Powered by CTFd</small>
+            </a>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("challengeModal");
+  const modalBody = document.getElementById("rawr");
+
+  modal.addEventListener("show.bs.modal", async (event) => {
+    const button = event.relatedTarget;
+    const challengeId = button.dataset.challengeId;
+
+    try {
+      const res = await fetch(`challenges/${challengeId}.html`);
+      if (!res.ok) throw new Error("not found");
+
+      const html = await res.text();
+      modalBody.innerHTML = html;
+
+      // strip Alpine / @event
+      modalBody.querySelectorAll("*").forEach(el => {
+        [...el.attributes].forEach(attr => {
+          if (attr.name.startsWith("x-") || attr.name.startsWith("@")) {
+            el.removeAttribute(attr.name);
+          }
+        });
+      });
+
+    } catch {
+      modalBody.innerHTML = `
+        <div class="p-4 text-center">
+          <button class="btn-close float-end" data-bs-dismiss="modal"></button>
+          <h2>Not archived yet ;-;</h2>
+          <p>ID ${challengeId}</p>
+        </div>
+      `;
+    }
+  });
+});
+</script>
+
 </body>
 
 </html>

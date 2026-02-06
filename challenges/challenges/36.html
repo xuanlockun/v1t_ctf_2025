@@ -1,0 +1,248 @@
+
+
+      <div>
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-target="#challenge" data-click="showChallenge()">
+              Challenge
+            </button>
+          </li>
+
+          
+            
+          
+
+          
+            
+          
+
+          
+            
+            <li class="nav-item">
+              <button class="nav-link challenge-solves" data-bs-target="#solves" data-click="showSolves()">
+                  8 Solves
+              </button>
+            </li>
+            
+          
+        </ul>
+      </div>
+
+      <div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="challenge">
+            <h2 class="challenge-name text-center pt-3">
+              Thirsty Sick 🥵💦
+            </h2>
+            <h3 class="challenge-value text-center">
+              615
+            </h3>
+
+
+            
+              <div class="challenge-tags text-center pt-2 pb-3">
+                
+                  
+                    <span class="challenge-tag badge bg-info">Jaze</span>
+                  
+                
+              </div>
+            
+
+            <small class="challenge-attribution text-center text-muted">
+              
+            </small>
+
+            
+            <small class="challenge-ratings text-center text-muted d-block">
+              
+                
+                  <span><i class="fa-solid fa-thumbs-up"></i> 1</span>
+                  <span class="text-center pdata-x-2">
+                    
+                    (100% liked)
+                    
+                  </span>
+                  <span><i class="fa-solid fa-thumbs-down"></i> 0</span>
+                
+              
+            </small>
+            
+
+            <span class="challenge-desc"><p>I chopped it into many pieces, put it back together, extracted it, tore it down again, twisted it, and rebuilt it once more.</p>
+</span>
+
+            
+
+            
+
+            
+              <div class="row challenge-files text-center pb-3">
+                
+                  <div class="col-md-4 col-sm-4 col-xs-12 file-button-wrapper d-block">
+                    
+                    
+                    
+                      
+                    
+                    <a class="btn btn-info btn-file mb-1 d-inline-block pdata-x-2 w-100 text-truncate" href="/files/084fd99e8821745fc42c5beae73575be/360degree.zip" title="360degree.zip">
+                      <i class="fas fa-download"></i>
+                      <small>
+                        360degree.zip
+                      </small>
+                    </a>
+                  </div>
+                
+              </div>
+            
+
+            <template data-x-if="max_attempts > 0">
+              <p class="text-center">
+                <span data-x-text="attempts"></span>/<span data-x-text="max_attempts"></span> attempts
+              </p>
+            </template>
+
+            <div class="row submit-row">
+              <div class="col-12 col-sm-8">
+                
+                  <input id="challenge-id" class="challenge-id" type="hidden" value="36">
+                  <input id="challenge-input" class="challenge-input form-control" type="text" name="submission" @keyup.enter="submitChallenge()" placeholder="Flag" data-x-model="submission">
+                
+              </div>
+
+              <div class="col-12 col-sm-4 mt-3 mt-sm-0 key-submit">
+                
+                  <button id="challenge-submit" class="challenge-submit btn btn-outline-secondary w-100 h-100" type="submit" data-click.debounce.500ms="submitChallenge()">
+                    Submit
+                  </button>
+                
+              </div>
+            </div>
+
+            <div class="row notification-row">
+              <div class="col-12">
+                <template data-x-if="response">
+                  
+                  <div class="alert text-center w-100 mt-3" :class="{
+                        'alert-success': response.data.status == 'correct',
+                        'alert-info': response.data.status == 'already_solved',
+                        'alert-danger': response.data.status == 'incorrect',
+                        'alert-warning': response.data.status == 'paused',
+                      }" role="alert">
+                    <strong data-x-text="response.data.message"></strong>
+                    <div data-x-show="(response.data.status == 'correct' || response.data.status == 'already_solved')">
+                      <div data-x-show="getNextId()">
+                        <button data-click="nextChallenge()" class="btn btn-info mt-3">
+                          Next Challenge
+                        </button>
+                      </div>
+
+                      
+
+                      
+                      <div class="mt-3">
+                        <hr>
+                        <div class="text-center">
+                          <p class="mb-2">Rate this challenge:</p>
+                          <div class="rating-buttons mb-2" data-x-init="selectedRating = ratingValue || 0;">
+                            <button class="btn btn-outline-success me-2" :class="{ 'active': selectedRating === 1 }" data-click="selectedRating = 1">
+                              <i class="fa-solid fa-thumbs-up"></i>
+                            </button>
+                            <button class="btn btn-outline-danger" :class="{ 'active': selectedRating === -1 }" data-click="selectedRating = -1">
+                              <i class="fa-solid fa-thumbs-down"></i>
+                            </button>
+                          </div>
+                          <div class="mt-3">
+                            <textarea class="form-control" rows="2" data-x-model="ratingReview" placeholder="Write a review (optional)" maxlength="2000"></textarea>
+                          </div>
+                          <div class="mt-3">
+                            <button data-click="submitRating()" class="btn btn-primary" :disabled="!selectedRating">
+                              Submit
+                            </button>
+                          </div>
+                          <div data-x-show="ratingSubmitted" class="text-success mt-2">
+                            <small>Thank you for your rating!</small>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade" id="submissions">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-striped align-middle text-center">
+                  <thead>
+                  <tr>
+                    <th>Submission</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tbody id="challenge-submission-names">
+                  <template data-x-for="submission in submissions">
+                    <tr>
+                      <td data-x-data="{ truncate: true }">
+                        <code data-x-text="truncate ? '*'.repeat(submission.provided.length) : submission.provided"></code>
+                        <button class="btn btn-link p-0 pl-1" data-click="truncate = !truncate">
+                          <i :class="truncate ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+                        </button>
+                      </td>
+                      <td data-x-text="submission.type"></td>
+                      <td data-x-text="submission.date"></td>
+                    </tr>
+                  </template>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade" id="solves">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-striped align-middle text-center">
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tbody id="challenge-solves-names">
+                  <template data-x-for="solve in solves">
+                    <tr>
+                      <td>
+                        <a :href="solve.account_url" data-x-text="solve.name"></a>
+                      </td>
+                      <td data-x-text="solve.date"></td>
+                    </tr>
+                  </template>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane fade" id="solution">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="challenge-solution-content pt-3">
+                  <template data-x-if="solution">
+                    <div data-x-html="solution" style="white-space: pre-wrap;">
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    
