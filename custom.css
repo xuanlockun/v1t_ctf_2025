@@ -1,0 +1,293 @@
+/* === CTFd Halloween Theme + Modal + No Margin Version === */
+
+/* Color setup */
+:root,
+[data-bs-theme=light] {
+    --bg: #0b0710;
+    --panel: #101018;
+    --accent: #ff7a18;
+    --accent-2: #ffb86b;
+    --muted: #d7d7dd;
+    --theme-color: #000;
+}
+
+[data-bs-theme=dark] {
+    color-scheme: dark;
+    --theme-color: #000;
+}
+
+/* Reset margin + padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Base */
+body {
+    background:
+        radial-gradient(ellipse at 10% 10%, rgba(255, 122, 24, 0.04) 0%, transparent 12%),
+        radial-gradient(ellipse at 90% 80%, rgba(255, 184, 107, 0.03) 0%, transparent 12%),
+        linear-gradient(180deg, var(--bg), #07050a 120%);
+    color: var(--muted);
+    font-family: "Inter", "Comfortaa", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar */
+.navbar,
+navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-color) !important;
+    color: var(--accent-2) !important;
+    margin: 0 !important;
+    padding: 6px 16px !important;
+}
+
+.navbar .navbar-brand {
+    color: var(--accent) !important;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0 !important;
+}
+
+/* Jumbotron */
+.jumbotron {
+    background-color: var(--theme-color) !important;
+    color: var(--accent-2);
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+/* Panels/cards */
+.card,
+.panel,
+.well,
+.challenge-card,
+.box,
+.container-fluid {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 122, 24, 0.05);
+    box-shadow: 0 18px 50px rgba(1, 1, 2, 0.55);
+    color: var(--muted);
+    border-radius: 10px;
+    margin: 0 !important;
+    padding: 16px !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--accent-2);
+    font-weight: 700;
+    margin: 0 0 8px 0 !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn.btn-primary {
+    background: linear-gradient(90deg, var(--accent)0%, var(--accent-2)100%) !important;
+    border: none !important;
+    color: #120b00 !important;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(255, 122, 24, 0.12);
+    margin: 0 !important;
+}
+
+/* Challenge tiles */
+.challenge-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, rgba(255, 122, 24, 0.018)0 2px, transparent 2px 6px);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Badges */
+.category,
+.challenge-type,
+.badge {
+    background: rgba(255, 122, 24, 0.06);
+    border: 1px solid rgba(255, 122, 24, 0.08);
+    color: var(--accent-2);
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 2px 8px;
+    display: inline-block;
+    margin: 2px;
+}
+
+/* Footer */
+.site-footer {
+    background: transparent;
+    border-top: 1px solid rgba(255, 122, 24, 0.04);
+    color: #bdbcc3;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin: 0 !important;
+}
+
+/* Links & inputs */
+a,
+.btn,
+button,
+input,
+select {
+    color: var(--accent-2) !important;
+}
+
+/* Floating emoji */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.95;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+    transform-origin: center;
+}
+
+body::before {
+    content: "👻";
+    top: 8vh;
+    right: 6vw;
+    font-size: 56px;
+    animation: floaty-1 7s ease-in-out infinite;
+}
+
+body::after {
+    content: "🎃";
+    bottom: 6vh;
+    left: 6vw;
+    font-size: 84px;
+    animation: floaty-2 9s ease-in-out infinite;
+}
+
+@keyframes floaty-1 {
+    0% {
+        transform: translateY(0)rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px)rotate(-6deg);
+    }
+
+    100% {
+        transform: translateY(0)rotate(0deg);
+    }
+}
+
+@keyframes floaty-2 {
+    0% {
+        transform: translateY(0)rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-22px)rotate(6deg);
+    }
+
+    100% {
+        transform: translateY(0)rotate(0deg);
+    }
+}
+
+@media(max-width:768px) {
+    body::after {
+        display: none;
+    }
+
+    body::before {
+        font-size: 44px;
+        top: 6vh;
+        right: 6vw;
+    }
+}
+
+/* Decorative underline */
+.page-title,
+.ctf-title,
+.header {
+    position: relative;
+}
+
+.page-title::after,
+.ctf-title::after,
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 6px;
+    background: linear-gradient(90deg, rgba(255, 122, 24, 0.12), rgba(255, 184, 107, 0.06));
+    border-radius: 6px;
+}
+
+/* Modal animation */
+.modal-dialog {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    animation: modal-popup 0.4s ease forwards;
+}
+
+@keyframes modal-popup {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 0 !important;
+}
+
+/* Text adjustments */
+.card p,
+.panel p {
+    color: #e6e6ea;
+    line-height: 1.45;
+    margin: 4px 0;
+}
+
+.solved-count,
+.score,
+.team-score {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+    color: var(--accent-2);
+}

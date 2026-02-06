@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>V1t CTF 2025</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/bem4bem.ico" type="image/x-icon">
+
+
+
+
+    <link rel="stylesheet" href="/main.css">
+
+
+
+
+    <script src="color_mode_switcher.js"></script>
+
+<link rel="stylesheet" href="/custom.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const snackbar = document.getElementById('ctfdio-snackbar-email-nudge');
+            if (snackbar) {
+                snackbar.style.display = 'none';
+            }
+
+            setTimeout(function () {
+                const footer = document.querySelector('.footer');
+                if (footer) {
+                    footer.style.opacity = '0';
+                    footer.style.transition = 'opacity 0.5s ease-in-out';
+
+                    setTimeout(function () {
+                        footer.style.display = 'none';
+                    }, 500);
+                }
+            }, 2000);
+        });
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+
+                <img class="img-responsive ctf_logo" src="/bem4bem_75.png" alt="V1t CTF 2025" height="25">
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#base-navbars"
+                aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="base-navbars">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rules">
+                            Rules
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">
+                            FAQ
+                        </a>
+                    </li>
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">
+                            Users
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/teams">
+                            Teams
+                        </a>
+                    </li>
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/scoreboard">
+                            Scoreboard
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/challenges">
+                            Challenges
+                        </a>
+                    </li>
+                </ul>
+
+                <hr class="d-sm-flex d-md-flex d-lg-none">
+
+                <ul class="navbar-nav ms-md-auto d-block d-sm-flex d-md-flex">
+
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login">
+                                <i class="fas fa-sign-in-alt d-none d-md-inline d-lg-none"></i>
+                            </span>
+                            <span class="d-sm-inline d-md-none d-lg-inline">
+                                <i class="fas fa-sign-in-alt pe-1"></i>
+                                Login
+                            </span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fas fa-language d-none d-md-inline"></i>
+                            <span class="d-sm-inline d-md-none">
+                                <i class="fas fa-language pe-1"></i>
+                                Change language
+                            </span>
+                        </button>
+                        <form x-data="LanguageForm">
+                            <ul class="dropdown-menu dropdown-menu-end">
+
+                                <li>
+                                    <span class="dropdown-item bg-primary text-white" @click="set" value="en">
+                                        English
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="de">
+                                        Deutsch
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="pl">
+                                        Polski
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="es">
+                                        Español
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ar">
+                                        اَلْعَرَبِيَّةُ
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="zh_CN">
+                                        简体中文
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="zh_TW">
+                                        繁體中文
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="fr">
+                                        Français
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ko">
+                                        한국어
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ru">
+                                        русский язык
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="pt_BR">
+                                        Português do Brasil
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="sk">
+                                        Slovenský jazyk
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ja">
+                                        日本語
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="it">
+                                        Italiano
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="vi">
+                                        tiếng Việt
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ca">
+                                        Català
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="el">
+                                        Ελληνικά
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="fi">
+                                        Suomi
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="ro">
+                                        Română
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="sl">
+                                        Slovenščina
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="sv">
+                                        Svenska
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="he">
+                                        עברית
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="dropdown-item " @click="set" value="uz">
+                                        oʻzbekcha
+                                    </span>
+                                </li>
+                            </ul>
+                        </form>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="nav-link theme-switch" type="button">
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle theme">
+                                <i class="fas fa-sun d-none d-md-inline"></i>
+                            </span>
+                            <span class="d-sm-inline d-md-none">
+                                <i class="fas fa-sun pe-1"></i>
+                                Toggle theme
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main role="main">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <img class="w-100 mx-auto d-block" style="max-width: 500px;padding: 50px;padding-top: 14vh;"
+                        src="bem4bem_75.png" />
+                    <h1 class="text-center">V1t CTF 2025</h1>
+                    <h1 class="text-center"><a href="https://ctftime.org/event/2920">-- CTFTime --</a></h1>
+                    <div id="countdown-wrapper">
+                        <div id="status"></div>
+                        <div id="countdown"></div>
+                    </div>
+                    <h3 class="text-center">
+                        <p>Quack quack have fun playing CTF</p>
+                        <p>Flag format: v1t{a-z/0-9}</p>
+                        <p>Follow us on social media:</p>
+                        <a href="https://discord.gg/WyYTC2EZqK"><i class="fab fa-discord fa-2x"
+                                aria-hidden="true"></i></a>&nbsp;
+                        <a href="https://v1t.site/"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>
+                    </h3>
+                    <br>
+                </div>
+            </div>
+            <style>
+                #countdown-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 20px;
+                    font-family: 'Segoe UI', sans-serif;
+                    text-align: center;
+                }
+
+                #countdown {
+                    display: flex;
+                    gap: 12px;
+                    justify-content: center;
+                    margin-bottom: 12px;
+                }
+
+                .time-box {
+                    background: #1e293b;
+                    padding: 12px 16px;
+                    border-radius: 10px;
+                    text-align: center;
+                    min-width: 65px;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+                }
+
+                .time-box span {
+                    display: block;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: #38bdf8;
+                }
+
+                .time-box small {
+                    display: block;
+                    font-size: 0.8rem;
+                    color: #e2e8f0;
+                }
+
+                #status {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .coming {
+                    color: #FFB100;
+                }
+
+                /* vàng */
+                .live {
+                    color: #4ade80;
+                }
+
+                /* xanh lá */
+                .ended {
+                    color: #f87171;
+                }
+
+                /* đỏ */
+            </style>
+            <script>
+                var startDate = new Date("2025-10-31T13:00:00Z").getTime();
+                var endDate = new Date("2025-11-02T13:00:00Z").getTime();
+
+                var x = setInterval(function () {
+                    var now = new Date().getTime();
+                    var countdownEl = document.getElementById("countdown");
+                    var statusEl = document.getElementById("status");
+
+                    if (now < startDate) {
+                        // Chưa bắt đầu
+                        var distance = startDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        statusEl.innerHTML = '<div class="coming">⏳ Coming Soon</div>';
+                        countdownEl.innerHTML = `
+        <p style="color:#e2e8f0;margin-top:8px;">Time until start:</p>
+        <div class="time-box"><span>${days}</span><small>Days</small></div>
+        <div class="time-box"><span>${hours}</span><small>Hours</small></div>
+        <div class="time-box"><span>${minutes}</span><small>Minutes</small></div>
+        <div class="time-box"><span>${seconds}</span><small>Seconds</small></div>
+      `;
+
+                    } else if (now >= startDate && now <= endDate) {
+                        // Đang diễn ra
+                        var distance = endDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        statusEl.innerHTML = '<div class="live">🚩 CTF is LIVE!</div>';
+                        countdownEl.innerHTML = `
+        <div class="time-box"><span>${days}</span><small>Days</small></div>
+        <div class="time-box"><span>${hours}</span><small>Hours</small></div>
+        <div class="time-box"><span>${minutes}</span><small>Minutes</small></div>
+        <div class="time-box"><span>${seconds}</span><small>Seconds</small></div>
+      `;
+
+                    } else {
+                        // Kết thúc
+                        clearInterval(x);
+                        countdownEl.innerHTML = '';
+                        statusEl.innerHTML = '<div class="ended">🔴 Ended</div>';
+                    }
+                }, 1000);
+            </script>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <a href="https://ctfd.io" class="text-secondary">
+                <small class="text-muted">
+                    Powered by CTFd
+                </small>
+            </a>
+        </div>
+    </footer>
+
+    <script type="module" src="/index.js"></script>
+    <script type="module" src="/page.js"></script>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 1000);
+
+        if (randomNumber === 36) {
+            alert("Damnnn you got lucky :>");
+            alert(atob("djF0e2x1Y2t5X2R1Y2t5fQ=="));
+        }
+    </script>
+</body>
+
+</html>
